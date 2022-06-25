@@ -1,0 +1,20 @@
+server:
+  port: '9090'
+  servlet:
+    context-path: '/api/ms1/v1'
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/ms1'
+    username: 'postgres'
+    password: '123'
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+  application:
+    name: 'ms1'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9093/eureka

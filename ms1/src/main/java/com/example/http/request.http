@@ -1,0 +1,1 @@
+GET http://localhost:9090/ms1/api/v1/template/getFromMS2
