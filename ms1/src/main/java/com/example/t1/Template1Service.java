@@ -1,7 +1,9 @@
 package com.example.t1;
 
+import com.example.feign.Template1FeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +19,14 @@ public class Template1Service {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private Template1FeignService template1FeignService;
+
 
     protected ResponseEntity<?> get() {
         List<Template1> list = repository.findAll();
+        Template1 template1 = template1FeignService.get();
+        list.add(template1);
         return ResponseEntity.ok(list);
     }
 

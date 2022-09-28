@@ -16,11 +16,4 @@ public class Template1Controller {
     private ResponseEntity<?> get() {
         return service.get();
     }
-
-    // connection with ms2
-
-    @GetMapping("/getFromMS2")
-    private ResponseEntity<?> getFromMS2() {
-        return service.getFromMS2();
-    }
 }
